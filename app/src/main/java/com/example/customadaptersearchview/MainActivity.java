@@ -1,6 +1,7 @@
 package com.example.customadaptersearchview;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -24,10 +25,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);;
+        setContentView(R.layout.activity_main);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Item list");
+
         listView = (ListView)findViewById(R.id.listViewId);
         title = new String[] {"Afghanistan","Bangladesh","Bhutan","China","Germany","India","Myanmar","Nepal","Pakistan","Russia"};
-        description = new String[] {"Afghanistan...","Bangladesh...","Bhutan...","China...","Germany...","India...","Myanmar...","Nepal...","Pakistan...","Russia..."};
+        description = new String[] {"Afghanistan...","Bangladesh...","Bhutan...","China...","Germany...","India...","Myanmar...",
+                "Nepal...","Pakistan...","Russia..."};
+
         icon = new int[] {R.drawable.afgan_flag,R.drawable.bangladesh_flag,
                 R.drawable.bhuta_flag,R.drawable.chinaflag_here,R.drawable.germany_flag,
                 R.drawable.india_flag,R.drawable.meyanmar_flag,R.drawable.nepal_flag,
@@ -39,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 /*pass result to arrayListViewAdapter*/
-        adapter = new ListVewAdapter(this,arrayList);
+        adapter = new ListVewAdapter(MainActivity.this,arrayList);
         listView.setAdapter(adapter);
 
 
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
         return true;
     }
 
@@ -88,3 +96,6 @@ public class MainActivity extends AppCompatActivity {
 /*add some images in drawable folder*/
 /*run project and test*/
 /* ok that's works well now handle item click to move to new activity with actionbar title and send some data*/
+/*Change the Action Bar title of Both Activities*/
+/*add BackButton in the Action Bar of New Activities*/
+/*Handel Item Clicks*/

@@ -2,9 +2,9 @@ package com.example.customadaptersearchview;
 
 public class Model {
 
-    String title;
-    String desc;
-    int icon;
+    private String title;
+    private String desc;
+    private int icon;
 
     public Model(String title, String desc, int icon) {
         this.title = title;

@@ -1,6 +1,7 @@
 package com.example.customadaptersearchview;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class ListVewAdapter extends BaseAdapter {
         TextView mTitleTv, mDescTv;
         ImageView mIconTv;
     }
+
     @Override
     public int getCount() {
         return modelList.size();
@@ -49,7 +51,6 @@ public class ListVewAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-
         ViewHolder holder;
         if (view == null){
             holder = new ViewHolder();
@@ -62,7 +63,7 @@ public class ListVewAdapter extends BaseAdapter {
             view.setTag(holder);
         }
         else {
-            holder = (ViewHolder)view.getTag();
+            holder = (ViewHolder) view.getTag();
         }
         /* set the result into view*/
         holder.mTitleTv.setText(modelList.get(position).getTitle());
@@ -75,7 +76,12 @@ public class ListVewAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*code here*/
+                if (modelList.get(position).equals("Afghanistan"));
+                /*Starts NewActivities with the title of ActionBar and Text for Text View*/
+                Intent intent = new Intent(mContext,NewActivities.class);
+                intent.putExtra("actionBarTitle","Afghanistan");
+                intent.putExtra("contentTv","Afghanistan....");
+                mContext.startActivity(intent);
             }
         });
 
