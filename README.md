@@ -1,5 +1,5 @@
 # customAdapterSearchViewAdd
-/*design row of list view*/
+# sign row of list view
 /*adding menu to add searchView in actionbar*/
 /*add model class*/
 /*add adapter class*/
